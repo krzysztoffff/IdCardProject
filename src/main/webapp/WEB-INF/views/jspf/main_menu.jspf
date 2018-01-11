@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
+
+
+MAIN MENU <br>
+
+
+<a href = "${pageContext.request.contextPath}/citizen/all"> BAZA PESEL</a>
+<a href = "${pageContext.request.contextPath}/documents/findcitizen"> Dowody Osobiste</a>
+<a href = "${pageContext.request.contextPath}/citizenhistory/show"> Historia bazy PESEL</a>
+

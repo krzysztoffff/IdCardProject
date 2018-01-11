@@ -23,6 +23,10 @@ public class UploadController {
     public String index() {
         return "jsp/upload";
     }
+    @GetMapping("/uploadmulti")
+    public String uploadMulti() {
+        return "jsp/uploadMulti";
+    }
 
     //@RequestMapping(value = "/upload", method = RequestMethod.POST)
     @PostMapping("/upload") //new annotation since 4.3
