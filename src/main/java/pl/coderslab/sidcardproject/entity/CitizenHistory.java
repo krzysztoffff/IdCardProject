@@ -2,6 +2,7 @@ package pl.coderslab.sidcardproject.entity;
 
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.pl.PESEL;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -25,6 +27,8 @@ public class CitizenHistory {
 	@NotNull
 	private long id;
 	@NotEmpty
+	@PESEL
+	@Column(unique=true)
     private String pesel;
 	@NotEmpty
     private String firstName;
@@ -35,12 +39,13 @@ public class CitizenHistory {
     @Column(length = 1)
     @Pattern(regexp = "[M]|[K]")
 	private String sex;
-    @Column
-//    @Type(type="date")
-    @DateTimeFormat
-    private String dateOfBirth;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfBirth;
+    @NotEmpty
     private String street;
+    @NotEmpty
     private String numberOfBuilding;
+    @NotEmpty
     private String city;
     @Column(name = "postalCode", length = 6)
     @Pattern(regexp = "[0-9][0-9]-[0-9][0-9][0-9]")
@@ -61,7 +66,7 @@ public class CitizenHistory {
    
 
 	public CitizenHistory(String pesel, String firstName, String secondName, String lastName, 
-			String sex, String dateOfBirth, String street, String numberOfBuilding, String city,
+			String sex, LocalDate dateOfBirth, String street, String numberOfBuilding, String city,
 			String postalCode, String action, Date actionTime) {
 		super();
 		this.pesel = pesel;
@@ -127,11 +132,11 @@ public class CitizenHistory {
 		this.sex = sex;
 	}
 
-	public String getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		
 		this.dateOfBirth = dateOfBirth;
 	}

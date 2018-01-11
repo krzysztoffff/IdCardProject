@@ -19,10 +19,11 @@ public class Documents {
 	private long id;
 	private String idCardNumber;
 	private String photo;
-	private String dateOfIssue;
-	private String expiryDate;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate expiryDate2;
+	private LocalDate dateOfIssue;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate expiryDate;
+	
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE })
 	private Citizen citizen;
@@ -31,14 +32,13 @@ public class Documents {
 		super();
 	}
 
-	public Documents(String idCardNumber, String photo, String dateOfIssue, String expiryDate, LocalDate expiryDate2,
+	public Documents(String idCardNumber, String photo, LocalDate dateOfIssue, LocalDate expiryDate, LocalDate expiryDate2,
 			Citizen citizen) {
 		super();
 		this.idCardNumber = idCardNumber;
 		this.photo = photo;
 		this.dateOfIssue = dateOfIssue;
 		this.expiryDate = expiryDate;
-		this.expiryDate2 = expiryDate2;
 		this.citizen = citizen;
 	}
 
@@ -46,15 +46,14 @@ public class Documents {
 		this.citizen = citizen;
 	}
 
-	public Documents(long id, String idCardNumber, String photo, String dateOfIssue, String expiryDate,
-			LocalDate expiryDate2, Citizen citizen) {
+	public Documents(long id, String idCardNumber, String photo, LocalDate dateOfIssue, LocalDate expiryDate,
+			 Citizen citizen) {
 		super();
 		this.id = id;
 		this.idCardNumber = idCardNumber;
 		this.photo = photo;
 		this.dateOfIssue = dateOfIssue;
 		this.expiryDate = expiryDate;
-		this.expiryDate2 = expiryDate2;
 		this.citizen = citizen;
 	}
 
@@ -82,19 +81,19 @@ public class Documents {
 		this.photo = photo;
 	}
 
-	public String getDateOfIssue() {
+	public LocalDate getDateOfIssue() {
 		return dateOfIssue;
 	}
 
-	public void setDateOfIssue(String dateOfIssue) {
+	public void setDateOfIssue(LocalDate dateOfIssue) {
 		this.dateOfIssue = dateOfIssue;
 	}
 
-	public String getExpiryDate() {
+	public LocalDate getExpiryDate() {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(String expiryDate) {
+	public void setExpiryDate(LocalDate expiryDate) {
 		this.expiryDate = expiryDate;
 	}
 
@@ -106,12 +105,6 @@ public class Documents {
 		this.citizen = citizen;
 	}
 
-	public LocalDate getExpiryDate2() {
-		return expiryDate2;
-	}
-
-	public void setExpiryDate2(LocalDate expiryDate2) {
-		this.expiryDate2 = expiryDate2;
-	}
+	
 
 }

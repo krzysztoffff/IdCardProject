@@ -1,7 +1,7 @@
 package pl.coderslab.sidcardproject.entity;
 
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,10 +12,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.pl.PESEL;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,6 +31,7 @@ public class Citizen {
 	private long id;
 	@NotEmpty
 	@PESEL
+	@Column(unique=true)
     private String pesel;
 	@NotEmpty
     private String firstName;
@@ -41,16 +42,18 @@ public class Citizen {
     @Column(length = 1)
     @Pattern(regexp = "[M]|[K]")
 	private String sex;
-    @Column
-//    @Type(type="date")
-    @DateTimeFormat
-    private String dateOfBirth;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateOfBirth;
+    @NotEmpty
     private String street;
+    @NotEmpty
     private String numberOfBuilding;
+    @NotEmpty
     private String city;
     @Column(name = "postalCode", length = 6)
     @Pattern(regexp = "[0-9][0-9]-[0-9][0-9][0-9]")
     private String postalCode;
+    
     
     
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "citizen", cascade = CascadeType.ALL)
@@ -65,7 +68,7 @@ public class Citizen {
 	
 
 	public Citizen(String pesel, String firstName, String secondName, String lastName, 
-			String sex, String dateOfBirth, String street, String numberOfBuilding, String city,
+			String sex, LocalDate dateOfBirth, String street, String numberOfBuilding, String city,
 			String postalCode) {
 		super();
 		this.pesel = pesel;
@@ -83,7 +86,7 @@ public class Citizen {
 	
 
 	public Citizen(long id, String pesel, String firstName, String secondName, String lastName, String sex,
-			String dateOfBirth, String street, String numberOfBuilding, String city, String postalCode,
+			LocalDate dateOfBirth, String street, String numberOfBuilding, String city, String postalCode,
 			List<Documents> documents) {
 		super();
 		this.id = id;
@@ -152,11 +155,11 @@ public class Citizen {
 		this.sex = sex;
 	}
 
-	public String getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		
 		this.dateOfBirth = dateOfBirth;
 	}
