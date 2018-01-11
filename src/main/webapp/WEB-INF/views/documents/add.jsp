@@ -21,10 +21,9 @@
   PESEL ${documents.citizen.pesel }<br>
   <form:input path="idCardNumber" placeholder="idCardNumber"/><form:errors path="idCardNumber"/><br>
   <form:input path="photo" placeholder="photo"/><form:errors path="photo"/><br>
-  <form:input path="dateOfIssue" placeholder="dateOfIssue"/><form:errors path="dateOfIssue"/><br>
-  <form:input path="expiryDate" placeholder="expiryDate"/><form:errors path="expiryDate"/><br>
+  <form:input type = "date" path="dateOfIssue" placeholder="dateOfIssue"/><form:errors path="dateOfIssue"/><br>
+  <form:input type = "date" path="expiryDate" placeholder="expiryDate"/><form:errors path="expiryDate"/><br>
   
-  <form:input type = "date" path="expiryDate2"  /><form:errors path="expiryDate2"/><br>
 
  <input type = "submit">
  

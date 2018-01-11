@@ -73,7 +73,6 @@
 					<th>scieżka do zdjęcia</th>
 					<th>data wydania</th>
 					<th>data ważności</th>
-					<th>data ważności LocalDate()</th>
 				</tr>
 				<c:forEach var="d" items="${documents}">
 					<tr>
@@ -83,7 +82,6 @@
 						<td>${d.photo}</td>
 						<td>${d.dateOfIssue}</td>
 						<td>${d.expiryDate}</td>
-						<td>${d.expiryDate2}</td>
 
 
 

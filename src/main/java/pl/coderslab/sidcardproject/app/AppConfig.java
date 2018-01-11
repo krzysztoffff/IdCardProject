@@ -30,7 +30,7 @@ import pl.coderslab.sidcardproject.converter.CitizenConverter;
 @EnableWebMvc
 @Configuration
 @ComponentScan({"pl.coderslab.sidcardproject.controller", "pl.coderslab.sidcardproject.bean", "pl.coderslab.sidcardproject.entity"
-	, "pl.coderslab.sidcardproject.exception"})
+	, "pl.coderslab.sidcardproject.exception", "pl.coderslab.sidcardproject.filters"})
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = { "pl.coderslab.sidcardproject.repository" })
 public class AppConfig extends WebMvcConfigurerAdapter {

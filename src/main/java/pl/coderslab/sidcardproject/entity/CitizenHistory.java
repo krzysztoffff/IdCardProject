@@ -28,8 +28,7 @@ public class CitizenHistory {
 	private long id;
 	@NotEmpty
 	@PESEL
-	@Column(unique=true)
-    private String pesel;
+	private String pesel;
 	@NotEmpty
     private String firstName;
     private String secondName;
