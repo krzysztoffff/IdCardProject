@@ -33,7 +33,7 @@
 				action="${pageContext.request.contextPath}/documents/upload"
 				enctype="multipart/form-data">
 				<input type="file" class="addphoto" name="file" /><br /> <br /> <input
-					type="submit" class="buttons" value="Dodaj zdjęcie" /> <br>
+					type="submit" class="buttons" value="Dodaj zdjęcie jpg" /> <br>
 		</c:otherwise>
 	</c:choose>
 

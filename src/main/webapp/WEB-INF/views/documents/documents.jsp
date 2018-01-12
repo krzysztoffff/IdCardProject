@@ -73,7 +73,7 @@
 
 					<th>nr wpisu</th>
 					<th>nr dowodu</th>
-					<th>scieżka do zdjęcia</th>
+					<th>zdjęcie</th>
 					<th>data wydania</th>
 					<th>data ważności</th>
 				</tr>
@@ -82,7 +82,8 @@
 
 						<td>${d.id}</td>
 						<td>${d.idCardNumber}</td>
-						<td>${d.photo}</td>
+						<td><img class="idimage" alt="Twoje zdjęcie"
+					src="${pageContext.request.contextPath}/resources/images/${d.photo}"></td>
 						<td>${d.dateOfIssue}</td>
 						<td>${d.expiryDate}</td>
 

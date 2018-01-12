@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -63,6 +65,11 @@ public class DocumentsController {
 		HttpSession s = SessionManager.session();
 		Citizen citizen = (Citizen) s.getAttribute("citizen");
 		
+		List <Documents> docs = new ArrayList();
+		docs = dr.findAllByCitizenId(citizen.getId());
+		int docsQuantity = docs.size();
+		String partFileName = Integer.toString(docsQuantity);
+		
 		 if (file.isEmpty()) {
 			 	m.addAttribute("flashmessage", "Please select a file to upload");
 //	            redirectAttributes.addFlashAttribute("flashmessage", "Please select a file to upload");
@@ -72,11 +79,13 @@ public class DocumentsController {
 	        try {
 
 	            byte[] bytes = file.getBytes();
-	            Path path = Paths.get(UPLOADED_FOLDER + citizen.getPesel() + ".jpg");
+	            Path path = Paths.get(UPLOADED_FOLDER + citizen.getPesel() + "x" + partFileName + ".jpg");
 	            Files.write(path, bytes);
 	            
 	            m.addAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
 	            m.addAttribute("photook", "forward");
+	            String filename = citizen.getPesel() + "x" + partFileName + ".jpg";
+	            s.setAttribute("photopath", filename);
 //	            redirectAttributes.addFlashAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
 
 	        } catch (IOException e) {

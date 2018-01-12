@@ -20,50 +20,45 @@
 
 
 	<center>
-	<table>
-		<tr>
-			<td>
-			
-			<form:form method="post" modelAttribute="documents">
-  		<form:input path="citizen"
-			value="${documents.citizen.id}" type = "hidden" />
-		<br>
+		<table>
+			<tr>
+				<td><form:form method="post" modelAttribute="documents">
+						<form:input path="citizen" value="${documents.citizen.id}"
+							type="hidden" />
+						<br>
 		${documents.citizen.firstName } ${documents.citizen.lastName }<br>
   		PESEL ${documents.citizen.pesel }<br>
-		<form:input path="idCardNumber" placeholder="idCardNumber" />
-		<form:errors path="idCardNumber" />
-		<br>
-		<form:input path="photo"
-			value="${pageContext.request.contextPath}/resources/images/${sessionScope.citizen.pesel}.jpg"
-			placeholder="photo" />
-		<form:errors path="photo" />
-		<br>
+						<form:input path="idCardNumber" placeholder="idCardNumber" />
+						<form:errors path="idCardNumber" />
+						<br>
+						<form:input path="photo"
+							value="${sessionScope.photopath}"
+							placeholder="photo" />
+						<form:errors path="photo" />
+						<br>
 
-		<form:input type="date" path="dateOfIssue" placeholder="dateOfIssue" />
-		<form:errors path="dateOfIssue" />
-		<br>
-		<form:input type="date" path="expiryDate" placeholder="expiryDate" />
-		<form:errors path="expiryDate" />
-		<br>
+						<form:input type="date" path="dateOfIssue"
+							placeholder="dateOfIssue" />
+						<form:errors path="dateOfIssue" />
+						<br>
+						<form:input type="date" path="expiryDate" placeholder="expiryDate" />
+						<form:errors path="expiryDate" />
+						<br>
 
 
-		<input class="buttons" type="submit">
+						<input class="buttons" type="submit">
 
-	</form:form>
-			
-			</td>
-			<td><img class="idimage" alt="Twoje zdjęcie"
-				src="${pageContext.request.contextPath}/resources/images/${sessionScope.citizen.pesel}.jpg"><br>
-			<br></td>
-		</tr>
-	</table>
-
-	
+					</form:form></td>
+				<td><img class="idimage" alt="Twoje zdjęcie"
+					src="${pageContext.request.contextPath}/resources/images/${sessionScope.photopath}"><br>
+					<br></td>
+			</tr>
+		</table>
 
 
 
-	<%@include file="../jspf/footer.jspf"%>
 
 
+		<%@include file="../jspf/footer.jspf"%>
 </body>
 </html>
