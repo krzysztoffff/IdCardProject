@@ -9,13 +9,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@include file="../jspf/head_config.jspf"%>
 <title>List</title>
 </head>
-<body>
-	<p>Baza pesel</p>
+<body class = "idbody">
+	<%@include file="../jspf/main_menu.jspf"%><br>
+	<%@include file="../jspf/header.jspf"%>
+	<p class = "description"> Baza pesel</p>
 
 <a href = "${pageContext.request.contextPath}/citizen/add"> Dodaj osobę do bazy PESEL</a><br><br>
-	<Table border = "1">
+	<Table class ="idtable">
 	<tr>
 	<th>id</th>
 	<th>Imie</th>
@@ -53,7 +56,7 @@
 
 	</Table>
 	
-
+<%@include file="../jspf/footer.jspf"%>
 
 
 

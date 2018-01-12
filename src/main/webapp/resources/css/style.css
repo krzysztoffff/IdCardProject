@@ -5,6 +5,120 @@
 	
 }
 
+.h1id{
+	text-align: center;
+	background-color: #ACC4CE;
+  	height: 29px;
+ 	 
+ 	font-size: 50px;
+  	color: white;
+  	text-shadow: 15px 4px 5px #000000;
+}
+
+.h2id{
+	text-align: center;
+	color: #666666;
+	
+	letter-spacing: 10px;
+  	line-height: 20px;
+    word-spacing: 10px;
+    font-style: italic;
+    font-size: 30px;
+	
+}
+
+
+.idbody{
+	background-color: #999999;
+	text-align: center;
+	
+	
+}
+
+
+
+.headhr{
+	
+	width: 80%;
+	
+	
+}
+
+.pmain{
+	color: #333333;
+	font-size: 24px;
+	letter-spacing: 7px;
+	
+}
+
+.mainmenu{
+	font-family: "Impact", Arial, sans-serif;
+	color: #444444;
+	width: 250px;
+	height: 50px;
+	font-size: 20px;
+	letter-spacing: 3px;
+}
+
+.buttons{
+	font-family: "Arial", Arial, sans-serif;
+	margin-top: 30px;
+	color: #444444;
+	width: 250px;
+	height: 50px;
+	font-size: 16px;
+	letter-spacing: 3px;
+}
+
+
+.addphoto{
+	font-family: "Arial", Arial, sans-serif;
+	margin-top: 30px;
+	color: #444444;
+
+	height: 50px;
+	font-size: 16px;
+	letter-spacing: 3px;
+}
+
 h1{
 	color:red;
+}
+
+.footerp{
+}
+
+.idtable{
+	margin-left: 100px;
+	
+	border: 1px solid black;
+	background-color: white;
+	border-collapse: collapse;
+	color: #666666;
+}
+
+.idtable td{
+	 border: 1px solid black;
+   padding: 5px;
+}
+
+.idtable th{
+	 border: 1px solid black;
+   padding: 5px;
+}
+
+
+
+.description{
+	color: #333333;
+	font-size: 18px;
+	letter-spacing: 3px;
+	
+}
+
+.iderrors{
+	
+	color: red;
+	font-size: 18px;
+	letter-spacing: 3px;
 }

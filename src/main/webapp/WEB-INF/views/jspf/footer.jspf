@@ -2,4 +2,4 @@
     pageEncoding="UTF-8"%>
 
     
-    <p>Copyright: Me</p>
+    <p class = "footerp">Copyright: Me</p>

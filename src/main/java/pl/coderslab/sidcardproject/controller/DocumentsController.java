@@ -1,5 +1,11 @@
 	package pl.coderslab.sidcardproject.controller;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +17,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import pl.coderslab.sidcardproject.bean.SessionManager;
 import pl.coderslab.sidcardproject.entity.Citizen;
 import pl.coderslab.sidcardproject.entity.Documents;
 import pl.coderslab.sidcardproject.repository.CitizenRepository;
@@ -24,7 +35,7 @@ public class DocumentsController {
 	DocumentsRepository dr;
 	@Autowired
 	CitizenRepository cr;
-
+	private static String UPLOADED_FOLDER = "F://workspace//IdCardProject//src//main//webapp//resources//images//";
 	
 
 	@GetMapping("/printdo/{citizen_id}")
@@ -35,6 +46,49 @@ public class DocumentsController {
 		return "documents/printdo";
 	}
 
+	@GetMapping("/add2/{citizen_id}")
+	public String addWithPhoto(Model d, @PathVariable long citizen_id) {
+		
+		HttpSession s = SessionManager.session();
+        s.setAttribute("citizen", cr.findOne(citizen_id));
+		
+//		d.addAttribute("documents", new Documents(cr.findOne(citizen_id)));
+        
+		return "documents/addwithphoto";
+	}
+	
+	@PostMapping("/upload")
+	public String uploadPicture(@RequestParam("file") MultipartFile file,
+            RedirectAttributes redirectAttributes, Model m) {
+		HttpSession s = SessionManager.session();
+		Citizen citizen = (Citizen) s.getAttribute("citizen");
+		
+		 if (file.isEmpty()) {
+			 	m.addAttribute("flashmessage", "Please select a file to upload");
+	            redirectAttributes.addFlashAttribute("flashmessage", "Please select a file to upload");
+	            return "documents/addwithphoto";
+	        }
+
+	        try {
+
+	            byte[] bytes = file.getBytes();
+	            Path path = Paths.get(UPLOADED_FOLDER + citizen.getPesel() + ".jpg");
+	            Files.write(path, bytes);
+	            
+	            m.addAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
+	            redirectAttributes.addFlashAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
+
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        return "documents/addwithphoto";
+		
+		
+		
+		
+	}
+	
 	@GetMapping("/add/{citizen_id}")
 	public String add(Model d, @PathVariable long citizen_id) {
 		

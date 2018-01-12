@@ -15,6 +15,7 @@
 <body>
 	Nowy dokument
 
+	 <img alt = "Twoje zdjęcie" src = "${pageContext.request.contextPath}/resources/images/${sessionScope.citizen.pesel}.jpg">
 	 
   <form:form method="post" modelAttribute="documents">
   Wpisz id citizena <form:input path="citizen" value = "${documents.citizen.id}" /><br>

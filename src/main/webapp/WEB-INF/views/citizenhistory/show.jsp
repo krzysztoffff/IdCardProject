@@ -11,28 +11,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@include file="../jspf/head_config.jspf"%>
 <title>Show history</title>
 </head>
-<body>
-	<p>Historia bazy PESEL</p>
+<body class = "idbody">
+	<%@include file="../jspf/main_menu.jspf"%><br>
+	<%@include file="../jspf/header.jspf"%>
+	
+	<p class = "description">Historia bazy PESEL</p>
 
 
-	<form action="${pageContext.request.contextPath}/citizenhistory/showbypesel"
-		method="post">
-		<label for="pesel">Wyświetl historię po numerze PESEL</label> <input
-			id="pesel" type="number" name="pesel"> <input type=submit
-			value="Generuj">
+	<form:form modelAttribute="findcitizenhistory" method="post">
+	<form:label class = "description" path="pesel">Historia po nr PESEL </form:label>
+	<form:input path="pesel" /><form:errors path = "pesel" />
+	<input type=submit value="Generuj">
+	</form:form>
+	
 
-	</form>
 
 
 	<br>
 	<br>
 
 	<c:choose>
-		<c:when test="${citizenlist != null}">
+		<c:when test="${onecitizenhistory != null}">
 
-			<table border=1>
+			<table class ="idtable">
 				<tr>
 					<th>id</th>
 					<th>Imie</th>
@@ -50,7 +54,7 @@
 				</tr>
 
 
-				<c:forEach var="cl" items="${citizenlist}">
+				<c:forEach var="cl" items="${onecitizenhistory}">
 					<tr>
 
 						<td>${cl.id}</td>
@@ -81,11 +85,10 @@
 
 
 	<br>
-	<br>
-	<br>
+	
 
 
-	<table border=1>
+	<table class ="idtable">
 		<tr>
 			<th>id</th>
 			<th>Imie</th>
@@ -138,7 +141,7 @@
 
 
 
-
+<%@include file="../jspf/footer.jspf"%>
 
 
 

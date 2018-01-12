@@ -2,10 +2,11 @@
 	pageEncoding="UTF-8" isELIgnored="false"%>
 
 
-MAIN MENU <br>
+<p class = "pmain">MAIN MENU</p>
 
 
-<a href = "${pageContext.request.contextPath}/citizen/all"> BAZA PESEL</a>
-<a href = "${pageContext.request.contextPath}/documents/findcitizen"> Dowody Osobiste</a>
-<a href = "${pageContext.request.contextPath}/citizenhistory/show"> Historia bazy PESEL</a>
+
+<a href = "${pageContext.request.contextPath}/citizen/all"> <input type="submit" class = "mainmenu" value="Baza PESEL"></a>
+<a href = "${pageContext.request.contextPath}/documents/findcitizen"> <input type="submit" class = "mainmenu" value="Dowody osobiste"></a>
+<a href = "${pageContext.request.contextPath}/citizenhistory/show"> <input type="submit" class = "mainmenu" value="Historia bazy PESEL"></a>
 

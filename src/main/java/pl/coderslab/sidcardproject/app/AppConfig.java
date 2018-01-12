@@ -94,7 +94,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {// ustawianie m.in CSS
 		super.addResourceHandlers(registry);
-//		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
+		registry.addResourceHandler("/jspf/**").addResourceLocations("/WEB-INF/views/jspf/");
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 
 	}

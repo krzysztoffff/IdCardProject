@@ -9,12 +9,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@include file="../jspf/head_config.jspf"%>
 <title>Add citizen</title>
 </head>
-<body>
-	Citizen add form
+<body class = "idbody">
+	<%@include file="../jspf/main_menu.jspf"%><br>
+	<%@include file="../jspf/header.jspf"%>
+	<p class = "description">Dodaj osobę</p>
 
-
+<center>
 	<form:form method="post" modelAttribute="citizen">
 		<Table>
 			<tr>
@@ -64,11 +67,13 @@
    
 
 
-
+	<br><br>
 
 
 		<input type="submit" />
+		</center>
 
 	</form:form>
+	<%@include file="../jspf/footer.jspf"%>
 </body>
 </html>

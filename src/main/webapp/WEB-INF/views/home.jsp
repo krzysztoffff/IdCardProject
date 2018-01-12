@@ -10,12 +10,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <%@include file="jspf/head_config.jspf"%>
-<title>RDO projekt</title>
+<title>Id Card Project</title>
 </head>
-<body>
-
-	<%@include file="jspf/header.jspf"%>
 	
+	<body class = "idbody">
+	
+	
+	<%@include file="jspf/header.jspf"%>
 	<%@include file="jspf/main_menu.jspf"%><br>
 	<%@include file="jspf/footer.jspf"%>
 

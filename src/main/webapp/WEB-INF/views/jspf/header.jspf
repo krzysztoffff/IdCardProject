@@ -2,7 +2,9 @@
     pageEncoding="UTF-8"%>
 
     
-    <h1> nagłówek</h1>
-    <p class = "rdoproject">Rejestr Dowodów Osobistych</p>
+    <h1 class = "h1id"> PSEUDO</h1>
+    <h2 class = "h2id">Rejestr Dowodów Osobistych</h2>
+    
+   <hr class = "headhr">
     
     

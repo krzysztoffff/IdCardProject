@@ -10,13 +10,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@include file="../jspf/head_config.jspf"%>
 <title>Dowody osobiste</title>
 </head>
-<body>
+<body class = "idbody">
+	<%@include file="../jspf/main_menu.jspf"%><br>
+	<%@include file="../jspf/header.jspf"%>
 	<p>Dane z bazy pesel</p>
 
 
-	<table border=1>
+	<table class ="idtable">
 		<tr>
 			<th>id</th>
 			<th>Imie</th>
@@ -48,10 +51,10 @@
 	</table>
 	<a
 		href="${pageContext.request.contextPath}/documents/printdo/${citizenfulldata.id}"
-		target="_blank"><input type="submit" value="Drukuj Wniosek"></a>
+		target="_blank"><input type="submit" class = "buttons" value="Drukuj Wniosek"></a>
 	<a
-		href="${pageContext.request.contextPath}/documents/add/${citizenfulldata.id}">
-		<input type="submit" value="Nowy Dowód Osobisty"></a>
+		href="${pageContext.request.contextPath}/documents/add2/${citizenfulldata.id}">
+		<input type="submit" class = "buttons" value="Nowy Dowód Osobisty"></a>
 
 
 
@@ -64,7 +67,7 @@
 	<c:choose>
 		<c:when test="${documents != []}">
 
-			<Table border="1">
+			<Table class ="idtable">
 				<tr>
 
 
@@ -97,7 +100,7 @@
 		</c:otherwise>
 	</c:choose>
 
-
+<%@include file="../jspf/footer.jspf"%>
 
 </body>
 </html>

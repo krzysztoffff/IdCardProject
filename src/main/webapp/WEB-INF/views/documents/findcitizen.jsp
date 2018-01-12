@@ -9,17 +9,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@include file="../jspf/head_config.jspf"%>
 <title>Podaj pesel</title>
 </head>
-<body>
-	Podaj pesel
+<body class = "idbody">
+	<%@include file="../jspf/main_menu.jspf"%><br>
+	<%@include file="../jspf/header.jspf"%>
 
 
 	 
   <form:form method="post" modelAttribute="citizen">
-  <h2>Znajdź osobę</h2>
-   <form:label path="pesel"> Znajdź po nr PESEL </form:label>
-				<form:input path="pesel" /><br>${message}<form:errors path = "pesel"/><br>
+   <form:label class = "description" path="pesel"> Znajdź po nr PESEL </form:label>
+				<form:input path="pesel" /><br>${message}<form:errors class = "iderrors" path = "pesel"/><br>
 
   
 
@@ -30,7 +31,7 @@
 
 		
 		
-		
+		<%@include file="../jspf/footer.jspf"%>
 
 
 		
