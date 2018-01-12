@@ -65,7 +65,7 @@ public class DocumentsController {
 		
 		 if (file.isEmpty()) {
 			 	m.addAttribute("flashmessage", "Please select a file to upload");
-	            redirectAttributes.addFlashAttribute("flashmessage", "Please select a file to upload");
+//	            redirectAttributes.addFlashAttribute("flashmessage", "Please select a file to upload");
 	            return "documents/addwithphoto";
 	        }
 
@@ -76,7 +76,8 @@ public class DocumentsController {
 	            Files.write(path, bytes);
 	            
 	            m.addAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
-	            redirectAttributes.addFlashAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
+	            m.addAttribute("photook", "forward");
+//	            redirectAttributes.addFlashAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
 
 	        } catch (IOException e) {
 	            e.printStackTrace();
