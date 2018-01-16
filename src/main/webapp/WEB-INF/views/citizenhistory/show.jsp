@@ -26,7 +26,7 @@
  
 	<form:form  method="post" modelAttribute="findchistory">
 	<form:label class = "description" path="pesel">Historia po nr PESEL </form:label>
-	<form:input path="pesel" /><form:errors path = "pesel" />
+	<form:input path="pesel" /><form:errors class = "iderrors" path = "pesel" /><br>
 	<input type=submit value="Generuj">
 	</form:form>
 	
@@ -38,7 +38,7 @@
 
 	<c:choose>
 		<c:when test="${onecitizenhistory != null}">
-
+		<p class = "description">Historia po nr pesel</p>
 			<table class ="idtable">
 				<tr>
 					<th>id</th>
@@ -89,7 +89,7 @@
 
 	<br>
 	
-
+	<p class = "description">Cała historia zmian:</p>
 
 	<table class ="idtable">
 		<tr>
