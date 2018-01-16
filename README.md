@@ -12,6 +12,15 @@ your path..\IdCardProject\src\main\webapp\resources\images
 <br><br>
 <h4>Functionality:</h4>
 <ul>
-<li>Create databyse of citizens with CRUD.</li>
+<li>Create citizens databyse with CRUD.</li>
 <li>Every operations on citizens are registered in citizen history with date and action name.</li>
+<li>User can create a new ID document assigned to citizen with picture and some additional data.</li>
+<li>Number of documents with picters are unlimited. Names of pictures files were granted unique.</li>
+</ul>
+<h4>Future functionality:</h4>
+<ul>
+<li>Acces with login and password encrypted by jbcrypt</li>
+<li>Refactor project to Spring security.</li>
+<li>Some additional functionalities wchich i don't know yet</li>
+
 </ul>
