@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.coderslab.sidcardproject.entity.CitizenHistory;
 import pl.coderslab.sidcardproject.repository.CitizenHistoryRepository;
@@ -23,27 +22,28 @@ public class CitizenHistoryController {
 
 	@GetMapping("/show")
 	public String showHistory(Model h) {
-		h.addAttribute("findcitizenhistory", new CitizenHistory());
+		h.addAttribute("findchistory", new CitizenHistory());
 		h.addAttribute("citizenhistory", this.chr.findAll());
 		return "citizenhistory/show";
 	}
 
 	@PostMapping("/show")
-	public String showHistoryPost2(@Valid @ModelAttribute CitizenHistory findcitizenhistory, BindingResult br, Model h) {
+	public String showHistoryPost(@Valid @ModelAttribute("findchistory") CitizenHistory findchistory, BindingResult brch,
+			Model h) {
+
 		
-		if (br.hasFieldErrors("pesel")) {
-			
-			return "citizenhistory/show";
-			
-		} else {
+
+		if (brch.hasFieldErrors("pesel")) {
 			h.addAttribute("citizenhistory", this.chr.findAll());
-			h.addAttribute("findcitizenhistory", new CitizenHistory());
-			h.addAttribute("onecitizenhistory", this.chr.findCitizenByPesel(findcitizenhistory.getPesel()));
 			return "citizenhistory/show";
 
 		}
 
-	}
+		h.addAttribute("citizenhistory", this.chr.findAll());
+		h.addAttribute("findchistory", new CitizenHistory());
+		h.addAttribute("onecitizenhistory", this.chr.findCitizenByPesel(findchistory.getPesel()));
+		return "citizenhistory/show";
 
+	}
 
 }

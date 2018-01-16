@@ -21,7 +21,10 @@
 	<p class = "description">Historia bazy PESEL</p>
 
 
-	<form:form modelAttribute="findcitizenhistory" method="post">
+
+
+ 
+	<form:form  method="post" modelAttribute="findchistory">
 	<form:label class = "description" path="pesel">Historia po nr PESEL </form:label>
 	<form:input path="pesel" /><form:errors path = "pesel" />
 	<input type=submit value="Generuj">
