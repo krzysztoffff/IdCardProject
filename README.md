@@ -8,8 +8,10 @@ In MySQL create manually databyse "idcardproject" and set permissions for it.
 
 Edit DocumentsController.java to change project folder path to
 your path..\IdCardProject\src\main\webapp\resources\images
-
-
-Functionality:
-Create databyse of citizens with CRUD.
-Every operations on citizens are register in citizens history with date and action name.
+</h3>
+<br><br>
+<h4>Functionality:</h4>
+<ul>
+<li>Create databyse of citizens with CRUD.</li>
+<li>Every operations on citizens are registered in citizen history with date and action name.</li>
+</ul>
