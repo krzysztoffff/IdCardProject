@@ -22,5 +22,5 @@ your path..\IdCardProject\src\main\webapp\resources\images
 <li>Acces with login and password encrypted by jbcrypt</li>
 <li>Refactor project to Spring security.</li>
 <li>Some additional functionalities wchich i don't know yet</li>
-
 </ul>
+<img src = "screen.jpg">

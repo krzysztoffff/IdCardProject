@@ -65,14 +65,13 @@ public class DocumentsController {
 		HttpSession s = SessionManager.session();
 		Citizen citizen = (Citizen) s.getAttribute("citizen");
 		
-		List <Documents> docs = new ArrayList();
-		docs = dr.findAllByCitizenId(citizen.getId());
-		int docsQuantity = docs.size();
-		String partFileName = Integer.toString(docsQuantity);
+		List <Documents> docs = new ArrayList();  //initialize citizens documents list
+		docs = dr.findAllByCitizenId(citizen.getId()); //take documents from databyse
+		int docsQuantity = docs.size(); //initialize and set number of documents
+		String partFileName = Integer.toString(docsQuantity); //initialize string wchich will be a part of future unique file picture file name
 		
-		 if (file.isEmpty()) {
+		 if (file.isEmpty()) { // when file from form is not good
 			 	m.addAttribute("flashmessage", "Please select a file to upload");
-//	            redirectAttributes.addFlashAttribute("flashmessage", "Please select a file to upload");
 	            return "documents/addwithphoto";
 	        }
 
@@ -84,9 +83,8 @@ public class DocumentsController {
 	            
 	            m.addAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
 	            m.addAttribute("photook", "forward");
-	            String filename = citizen.getPesel() + "x" + partFileName + ".jpg";
-	            s.setAttribute("photopath", filename);
-//	            redirectAttributes.addFlashAttribute("flashmessage", "You successfully uploaded '" + file.getOriginalFilename() + "'");
+	            String filename = citizen.getPesel() + "x" + partFileName + ".jpg"; //set unique file name to store on server
+	            s.setAttribute("photopath", filename); //set file name in session to send it to view
 
 	        } catch (IOException e) {
 	            e.printStackTrace();
