@@ -23,4 +23,4 @@ your path..\IdCardProject\src\main\webapp\resources\images
 <li>Refactor project to Spring security.</li>
 <li>Some additional functionalities wchich i don't know yet</li>
 </ul>
-<img src = "screen.jpg">
+<img src = "https://github.com/krzysztoffff/IdCardProject/screen.jpg">
