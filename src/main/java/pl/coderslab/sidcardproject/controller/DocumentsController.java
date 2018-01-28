@@ -10,6 +10,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.apache.taglibs.standard.lang.jstl.test.PageContextImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,13 +38,15 @@ public class DocumentsController {
 	DocumentsRepository dr;
 	@Autowired
 	CitizenRepository cr;
-	private static String UPLOADED_FOLDER = "F://workspace//IdCardProject//src//main//webapp//resources//images//";
+//	private static String UPLOADED_FOLDER = "F://workspace//IdCardProject//src//main//webapp//resources//images//";
+	private static String UPLOADED_FOLDER = "//usr//home//krzysztoffff//tomcat//webapps//IdCardProject//resources//images//";
 	
 
 	@GetMapping("/printdo/{citizen_id}")
 	public String printDo(Model d, @PathVariable long citizen_id) {
 
 		d.addAttribute("citizen", cr.findOne(citizen_id));
+		
 
 		return "documents/printdo";
 	}
@@ -66,9 +69,9 @@ public class DocumentsController {
 		Citizen citizen = (Citizen) s.getAttribute("citizen");
 		
 		List <Documents> docs = new ArrayList();  //initialize citizens documents list
-		docs = dr.findAllByCitizenId(citizen.getId()); //take documents from databyse
+		docs = dr.findAllByCitizenId(citizen.getId()); //take documents from database
 		int docsQuantity = docs.size(); //initialize and set number of documents
-		String partFileName = Integer.toString(docsQuantity); //initialize string wchich will be a part of future unique file picture file name
+		String partFileName = Integer.toString(docsQuantity); //initialize string which will be a part of future unique file picture file name
 		
 		 if (file.isEmpty()) { // when file from form is not good
 			 	m.addAttribute("flashmessage", "Please select a file to upload");
@@ -87,7 +90,8 @@ public class DocumentsController {
 	            s.setAttribute("photopath", filename); //set file name in session to send it to view
 
 	        } catch (IOException e) {
-	            e.printStackTrace();
+	        	m.addAttribute("flashmessage", e);
+//	            e.printStackTrace();
 	        }
 
 	        return "documents/addwithphoto";
