@@ -2,12 +2,18 @@
 
 <h2>Spring MVC with JPA Hibernate project.</h2>
 
-<h3>Instructions: <br><br>
+<h2>Link:<br>
+<a href="http://www.krzysztoffff.usermd.net/IdCardProject">http://www.krzysztoffff.usermd.net/IdCardProject</a></h2>
 
-In MySQL create manually databyse "idcardproject" and set permissions for it.
+
+<h3>Installation instructions: <br><br>
+
+In MySQL create manually databyse which correspondences with
+src/main/resources/META-INF/persistence.xml
 
 Edit DocumentsController.java to change project folder path to
-your path..\IdCardProject\src\main\webapp\resources\images
+your path e.g. <br>
+private static String UPLOADED_FOLDER = "//usr//home//krzysztoffff//tomcat//webapps//IdCardProject//resources//images//";
 </h3>
 <br><br>
 <h4>Functionality:</h4>
