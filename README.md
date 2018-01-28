@@ -3,7 +3,8 @@
 <h2>Spring MVC with JPA Hibernate project.</h2>
 
 <h2>Link:<br>
-<a href="http://www.krzysztoffff.usermd.net/IdCardProject">http://www.krzysztoffff.usermd.net/IdCardProject</a></h2>
+<a href="http://www.krzysztoffff.usermd.net/IdCardProject" target="_blank">
+http://www.krzysztoffff.usermd.net/IdCardProject</a></h2>
 
 
 <h3>Installation instructions: <br><br>
