@@ -3,7 +3,7 @@
 <h2>Spring MVC with JPA Hibernate project.</h2>
 
 <h2>Link:<br>
-<a href="http://www.krzysztoffff.usermd.net/IdCardProject" target="blank">
+<a href="http://www.krzysztoffff.usermd.net/IdCardProject" target="_blank">
 http://www.krzysztoffff.usermd.net/IdCardProject</a></h2>
 
 
