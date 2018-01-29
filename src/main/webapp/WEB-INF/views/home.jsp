@@ -19,7 +19,19 @@
 	<%@include file="jspf/header.jspf"%>
 	<%@include file="jspf/main_menu.jspf"%><br>
 	</center>
-	<div class="guide">Witam!</div>
+	<div class="guide">
+	Witam!<br>
+	To jest mój projekt końcowy kursu Java EE w Coders Lab.
+	W tym kwadraciku będę opisywał co program robi.<br>
+	W tej chwili działają następujące funkcje.
+	<ul>
+	<li>Dodawanie/edycja/usuwanie osoby z bazy PESEL.</li>
+	<li>Osoba z bazy może mieć utworzony dowód osobisty ze zdjęciem.</li>
+	</ul>
+	Zapraszam do klikania.
+	
+	
+	</div>
 	<%@include file="jspf/footer.jspf"%>
 
 

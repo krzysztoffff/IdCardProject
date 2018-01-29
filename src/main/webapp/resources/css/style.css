@@ -1,57 +1,44 @@
 @charset "UTF-8";
 
-.rdoproject{
+.rdoproject {
 	color: red;
-	
 }
 
-.h1id{
+.h1id {
 	text-align: center;
 	background-color: #ACC4CE;
-  	height: 29px;
- 	 
- 	font-size: 50px;
-  	color: white;
-  	text-shadow: 15px 4px 5px #000000;
+	height: 29px;
+	font-size: 50px;
+	color: white;
+	text-shadow: 15px 4px 5px #000000;
 }
 
-.h2id{
+.h2id {
 	text-align: center;
 	color: #666666;
-	
 	letter-spacing: 10px;
-  	line-height: 20px;
-    word-spacing: 10px;
-    font-style: italic;
-    font-size: 30px;
-	
+	line-height: 20px;
+	word-spacing: 10px;
+	font-style: italic;
+	font-size: 30px;
 }
 
-
-.idbody{
+.idbody {
 	background-color: #999999;
 	text-align: center;
-	
-	
 }
 
-
-
-.headhr{
-	
+.headhr {
 	width: 80%;
-	
-	
 }
 
-.pmain{
+.pmain {
 	color: #333333;
 	font-size: 24px;
 	letter-spacing: 7px;
-	
 }
 
-.mainmenu{
+.mainmenu {
 	font-family: "Impact", Arial, sans-serif;
 	color: #444444;
 	width: 250px;
@@ -60,7 +47,7 @@
 	letter-spacing: 3px;
 }
 
-.buttons{
+.buttons {
 	font-family: "Arial", Arial, sans-serif;
 	margin-top: 30px;
 	color: #444444;
@@ -70,74 +57,72 @@
 	letter-spacing: 3px;
 }
 
-
-.addphoto{
+.addphoto {
 	font-family: "Arial", Arial, sans-serif;
 	margin-top: 30px;
 	color: #444444;
-
 	height: 50px;
 	font-size: 16px;
 	letter-spacing: 3px;
 }
 
-h1{
-	color:red;
+h1 {
+	color: red;
 }
 
-.footerp{
-}
-
-.idtable{
-	margin-left: 100px;
+.footerp {
 	
+}
+
+.idtable {
+	margin-left: 100px;
 	border: 1px solid black;
 	background-color: white;
 	border-collapse: collapse;
 	color: #666666;
 }
 
-.idtable td{
-	 border: 1px solid black;
-   padding: 5px;
+.idtable td {
+	border: 1px solid black;
+	padding: 5px;
 }
 
-.idtable th{
-	 border: 1px solid black;
-   padding: 5px;
+.idtable th {
+	border: 1px solid black;
+	padding: 5px;
 }
 
-.idimage{
+.idimage {
 	width: 150px;
 	height: 200px;
-	
 }
 
-
-
-.description{
+.description {
 	color: #333333;
 	font-size: 18px;
 	letter-spacing: 3px;
-	
 }
 
-
-.guide{
+.guide {
 	margin-top: 30px;
 	width: 400px;
-	height: 150px;
-	color: #00ff00;
-	font-size: 18px;
-	letter-spacing: 3px;
+	color: #000000;
+	font-size: 14px;
+	letter-spacing: 1px;
 	border-top-style: ridge;
 	border-bottom-style: ridge;
-	
-	
+	background: #ebf1f6; /* Old browsers */
+	background: -moz-linear-gradient(top, #ebf1f6 0%, #abd3ee 50%, #89c3eb 51%, #d5ebfb
+		100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ebf1f6 0%, #abd3ee 50%, #89c3eb 51%,
+		#d5ebfb 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ebf1f6 0%, #abd3ee 50%, #89c3eb 51%, #d5ebfb
+		100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6',
+		endColorstr='#d5ebfb', GradientType=0); /* IE6-9 */
 }
 
-.iderrors{
-	
+.iderrors {
 	color: red;
 	font-size: 18px;
 	letter-spacing: 3px;
