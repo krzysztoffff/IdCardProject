@@ -18,6 +18,8 @@
 	
 	<%@include file="jspf/header.jspf"%>
 	<%@include file="jspf/main_menu.jspf"%><br>
+	</center>
+	<div class="guide">Witam!</div>
 	<%@include file="jspf/footer.jspf"%>
 
 

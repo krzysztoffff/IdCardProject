@@ -38,8 +38,8 @@ public class DocumentsController {
 	DocumentsRepository dr;
 	@Autowired
 	CitizenRepository cr;
-//	private static String UPLOADED_FOLDER = "F://workspace//IdCardProject//src//main//webapp//resources//images//";
-	private static String UPLOADED_FOLDER = "//usr//home//krzysztoffff//tomcat//webapps//IdCardProject//resources//images//";
+	private static String UPLOADED_FOLDER = "F://workspace//IdCardProject//src//main//webapp//resources//images//";
+//	private static String UPLOADED_FOLDER = "//usr//home//krzysztoffff//tomcat//webapps//IdCardProject//resources//images//";
 	
 
 	@GetMapping("/printdo/{citizen_id}")

@@ -122,6 +122,20 @@ h1{
 	
 }
 
+
+.guide{
+	margin-top: 30px;
+	width: 400px;
+	height: 150px;
+	color: #00ff00;
+	font-size: 18px;
+	letter-spacing: 3px;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	
+	
+}
+
 .iderrors{
 	
 	color: red;
