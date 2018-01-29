@@ -56,6 +56,23 @@
 
 	</Table>
 	
+	
+	</center>
+	<div class="guide">
+	To jest baza obywateli PESEL.<br>
+	Tu możesz
+	<ul>
+	<li>Dodać/edytować/usunąć osobę. Można śmiało klikać!</li>
+	<li>Każda akcja zostanie zapisana w historii.</li>
+	<li>Aby móc utworzyć Dowód Osobisty musi on być przyporządkowany osobie z tej bazy.</li>
+	<li>Aby móc później utworzyć dowód osobisty skopiuj sobie PESEL wybranej osoby.</li>
+	</ul>
+	Zapraszam do klikania.
+	
+	
+	</div>
+	
+	
 <%@include file="../jspf/footer.jspf"%>
 
 
