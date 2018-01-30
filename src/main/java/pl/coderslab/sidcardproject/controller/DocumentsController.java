@@ -111,6 +111,8 @@ public class DocumentsController {
 
 	@PostMapping("/add/*")//w metodzie get mam parametr
 	public String addPost(Model m, @Valid @ModelAttribute Documents documents, BindingResult br) {//przekazujê model dalej
+		if (br.hasErrors())
+			return "documents/add";
 		long id = documents.getCitizen().getId();  //pobieram id z dokumentów
 		dr.save(documents); //zapisuje dokument
 		m.addAttribute("citizenfulldata", cr.findOne(id)); //³adujê atrybuty na nowo

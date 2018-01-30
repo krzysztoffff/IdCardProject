@@ -9,7 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -17,10 +19,13 @@ public class Documents {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@NotEmpty
 	private String idCardNumber;
 	private String photo;
+	@NotNull
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dateOfIssue;
+	@NotNull
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate expiryDate;
 	

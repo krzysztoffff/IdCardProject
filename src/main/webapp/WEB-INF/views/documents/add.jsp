@@ -52,7 +52,7 @@
 				<tr>
 					<td id="td_add_doc"><span class="description2">Nadaj nr dowodu osobistego </span></td>
 					<td><form:input path="idCardNumber" placeholder="idCardNumber" />
-						<form:errors path="idCardNumber" /></td>
+						<form:errors class="iderrors" path="idCardNumber" /></td>
 				</tr>
 				<tr>
 					<td id="td_add_doc"><span class="description2">Unikalna nazwa pliku zdjęcia na
@@ -63,12 +63,12 @@
 				<tr>
 					<td id="td_add_doc"><span class="description2">Wprowadź datę wydania </span></td>
 					<td><form:input type="date" path="dateOfIssue"
-							placeholder="dateOfIssue" /> <form:errors path="dateOfIssue" /></td>
+							placeholder="dateOfIssue" /> <form:errors class="iderrors" path="dateOfIssue" /></td>
 				</tr>
 				<tr>
 					<td id="td_add_doc"><span class="description2">Ustal datę ważności </span></td>
 					<td><form:input type="date" path="expiryDate"
-							placeholder="expiryDate" /> <form:errors path="expiryDate" /></td>
+							placeholder="expiryDate" /> <form:errors class="iderrors" path="expiryDate" /></td>
 				</tr>
 
 
