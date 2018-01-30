@@ -22,7 +22,7 @@
 	<div class="guide">
 	Witam!<br>
 	To jest mój projekt końcowy kursu Java EE w Coders Lab.
-	W tym kwadraciku będę opisywał co program robi.<br>
+	W tym prostokąciku będę opisywał co program robi.<br>
 	W tej chwili działają następujące funkcje.
 	<ul>
 	<li>Dodawanie/edycja/usuwanie osoby z bazy PESEL.</li>

@@ -16,6 +16,17 @@
 <body class = "idbody">
 	<%@include file="../jspf/main_menu.jspf"%><br>
 	<%@include file="../jspf/header.jspf"%>
+	<div class="guide">
+		Podgląd dokumentów <i>obywatela</i>.<br>
+		<ul>
+			<li>W poniższej tabeli wyświetlam dane człowieka</li>
+
+		</ul>
+
+
+	</div>
+	
+	
 	<p>Dane z bazy pesel</p>
 
 
@@ -59,10 +70,20 @@
 
 
 
+	<div class="guide">
+		Poniżej wyświetlam:<br>
+		<ul>
+			<li>Wszystkie dowody osobiste. Jeżeli osoba takie posiada.</li>
+			<li>Jeżeli nie, utwórz człowiekowi dowód. Na pewno mu się przyda!</li>
+			<li>Jeżeli <i>petent</i> zgubił dokument, zmienia płeć czy nazwisko możesz mu wydać kolejny dowód osobisty.</li>
+
+		</ul>
+
+
+	</div>
 
 
 	<br>
-	<br> Dokumenty gościa:
 	<br>
 	<c:choose>
 		<c:when test="${documents != []}">

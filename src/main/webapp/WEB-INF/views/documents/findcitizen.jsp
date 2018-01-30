@@ -15,6 +15,17 @@
 <body class = "idbody">
 	<%@include file="../jspf/main_menu.jspf"%><br>
 	<%@include file="../jspf/header.jspf"%>
+<div class="guide">
+		Dodawanie dowodów osobistych<br>
+		<ul>
+			<li>Najpierw trzeba znaleźć osobę i podglądnąć czy i jakie ma dokumenty.</li>
+			<li>Wprowadź jaj nr PESEL <br>(z naszej zmyślonej bazy PESEL ;)</li>
+
+		</ul>
+		Zapraszam do klikania.
+
+
+	</div>
 
 
 	 
@@ -24,7 +35,7 @@
 
   
 
- <input type = "submit">
+ <input type = "submit" class = "buttons" value = "Wyświetl">
  
  </form:form>
  

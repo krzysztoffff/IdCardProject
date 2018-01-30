@@ -17,6 +17,19 @@
 <body class="idbody">
 	<%@include file="../jspf/main_menu.jspf"%><br>
 	<%@include file="../jspf/header.jspf"%>
+	<div class="guide">
+		Tworzymy nowy dowód osobisty.<br>
+		<ul>
+			<li>Rozpoczynamy od dodania zdjęcia. </li>
+			<li>Program zachowa zdjęcie na dysku serwera i nada mu unikalną nazwę pliku składającą się z nr pesel oraz
+			 kolejnego nr z liczby posiadanych dokumentów.</li>
+			 <li>Jak na razie testowałem tylko pliki jpg.</li>
+
+		</ul>
+
+
+	</div>
+	
 
 
 	<p class="description">Nowy dokument dla
