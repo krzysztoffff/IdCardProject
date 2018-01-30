@@ -112,6 +112,24 @@ h1 {
 	letter-spacing: 3px;
 }
 
+.description2 {
+	color: #333333;
+	font-size: 16px;
+	letter-spacing: 2px;
+}
+
+#td_photo {
+	padding: 50px;
+	text-align: center;
+	
+}
+
+#td_add_doc {
+	padding: 5px;
+	text-align: right;
+	
+}
+
 .guide {
 	margin-top: 30px;
 	width: 400px;

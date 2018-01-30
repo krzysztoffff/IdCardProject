@@ -39,7 +39,7 @@
 				<td><form:input path="pesel" /><form:errors path = "pesel"/></td>
 			</tr>
 			<tr>
-				<td><form:label path="firstName">Imie </form:label></td>
+				<td><form:label path="firstName">Imię </form:label></td>
 				<td><form:input path="firstName" /><form:errors path = "firstName" /></td>
 			</tr>
 			<tr>

@@ -16,44 +16,70 @@
 <body class="idbody">
 	<%@include file="../jspf/main_menu.jspf"%><br>
 	<%@include file="../jspf/header.jspf"%>
+	
+	<div class="guide">
+		Dodawanie dowodu osobistego - ostatni krok.<br>
+		<ul>
+			<li>Wypełnij pola zgodnie z opisami.</li>
+			<li>Kliknij zapisz i zobacz czy <i>obywatel</i> ma nowy dowód osobisty.</li>
+
+		</ul>
+
+
+	</div>
+	
 	<p class="description">Nowy dokument</p>
 
 
 	<center>
-		<table>
-			<tr>
-				<td><form:form method="post" modelAttribute="documents">
-						<form:input path="citizen" value="${documents.citizen.id}"
-							type="hidden" />
-						<br>
-		<span class = "guide">Imie i nazwisko: </span>${documents.citizen.firstName } ${documents.citizen.lastName }<br>
-  		<span class = "guide">PESEL </span> ${documents.citizen.pesel }<br>
-						<span class = "guide">Nadaj nr dowodu osobistego </span><form:input path="idCardNumber" placeholder="idCardNumber" />
-						<form:errors path="idCardNumber" />
-						<br>
-						<span class = "guide">Unikalna nazwa pliku zdjęcia na serwerze </span><form:input path="photo" readonly="readonly" 
-							value="${sessionScope.photopath}" placeholder="photo" />
-						<form:errors path="photo" />
-						<br>
 
-						<span class = "guide">Wprowadź datę wydania </span><form:input type="date" path="dateOfIssue"
-							placeholder="dateOfIssue" />
-						<form:errors path="dateOfIssue" />
-						<br>
-						<span class = "guide">Ustal datę ważności </span><form:input type="date" path="expiryDate" placeholder="expiryDate" />
-						<form:errors path="expiryDate" />
-						<br>
+		<form:form method="post" modelAttribute="documents">
+			<form:input path="citizen" value="${documents.citizen.id}"
+				type="hidden" />
+			<table>
+				<tr>
+					<td id="td_add_doc"><span class="description2">Imie i nazwisko: </span></td>
+					<td>${documents.citizen.firstName }
+						${documents.citizen.lastName }</td>
+					<td rowspan="6" id="td_photo"><img class="idimage" alt="Twoje zdjęcie"
+						src="${pageContext.request.contextPath}/resources/images/${sessionScope.photopath}"><br>
+						<br></td>
+				</tr>
+				<tr>
+					<td id="td_add_doc"><span class="description2">PESEL </span></td>
+					<td>${documents.citizen.pesel }</td>
+				</tr>
+				<tr>
+					<td id="td_add_doc"><span class="description2">Nadaj nr dowodu osobistego </span></td>
+					<td><form:input path="idCardNumber" placeholder="idCardNumber" />
+						<form:errors path="idCardNumber" /></td>
+				</tr>
+				<tr>
+					<td id="td_add_doc"><span class="description2">Unikalna nazwa pliku zdjęcia na
+							serwerze </span></td>
+					<td><form:input path="photo" readonly="true"
+							value="${sessionScope.photopath}" placeholder="photo" /></td>
+				</tr>
+				<tr>
+					<td id="td_add_doc"><span class="description2">Wprowadź datę wydania </span></td>
+					<td><form:input type="date" path="dateOfIssue"
+							placeholder="dateOfIssue" /> <form:errors path="dateOfIssue" /></td>
+				</tr>
+				<tr>
+					<td id="td_add_doc"><span class="description2">Ustal datę ważności </span></td>
+					<td><form:input type="date" path="expiryDate"
+							placeholder="expiryDate" /> <form:errors path="expiryDate" /></td>
+				</tr>
 
 
-						<input class="buttons" type="submit">
+			</table>
 
-					</form:form></td>
-				<td><img class="idimage" alt="Twoje zdjęcie"
-					src="${pageContext.request.contextPath}/resources/images/${sessionScope.photopath}"><br>
-					<br></td>
-			</tr>
-		</table>
+			<input class="buttons" type="submit" value = "Zapisz">
 
+		</form:form>
+
+
+		
 
 
 

@@ -28,6 +28,8 @@
 	<li>Dodawanie/edycja/usuwanie osoby z bazy PESEL.</li>
 	<li>Osoba z bazy może mieć utworzony dowód osobisty ze zdjęciem.</li>
 	<li>W bazie jest trochę zmyślonych danych oraz kilka zdjęć zapożyczonych z sieci.</li>
+	<li>UWAGA. Czasem jak pierwszy raz odpalę stronę dostaję błąd 500. Wtedy odświeżam - zatrybi i hula bezbłędnie.<br>
+	Dzieje się tak jednorazowo podczas sesji. Jeszcze nie znam przyczyny dlaczego tak jest.</li>
 	</ul>
 	Zapraszam do klikania.
 	
