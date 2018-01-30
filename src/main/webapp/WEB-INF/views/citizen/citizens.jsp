@@ -15,9 +15,25 @@
 <body class = "idbody">
 	<%@include file="../jspf/main_menu.jspf"%><br>
 	<%@include file="../jspf/header.jspf"%>
+	
+	
+	
+	<div class="guide">
+	To jest baza obywateli PESEL.<br>
+	Tu możesz:
+	<ul>
+	<li>Dodać/edytować/usunąć osobę.</li>
+	<li>Każda akcja zostanie zapisana w historii.</li>
+	<li>Aby móc utworzyć Dowód Osobisty musi on być przyporządkowany osobie z tej bazy.</li>
+	<li>Aby móc później utworzyć dowód osobisty skopiuj PESEL wybranej osoby.</li>
+	</ul>
+	Zapraszam do klikania.
+	
+	
+	</div>
 	<p class = "description"> Baza pesel</p>
 
-<a href = "${pageContext.request.contextPath}/citizen/add"> Dodaj osobę do bazy PESEL</a><br><br>
+<a href = "${pageContext.request.contextPath}/citizen/add"><input type = "submit" class="buttons2" value = "Dodaj osobę do bazy PESEL"></a><br><br>
 	<Table class ="idtable">
 	<tr>
 	<th>id</th>
@@ -48,8 +64,8 @@
 				<td>${c.city}</td>
 				
 				
-				<td><a href="${pageContext.request.contextPath}/citizen/delete/${c.id}">Delete</a></td>
-    			<td><a href="${pageContext.request.contextPath}/citizen/edit/${c.id}">Edit</a></td>
+				<td><a href="${pageContext.request.contextPath}/citizen/delete/${c.id}"><input type="submit" value="Usuń" class="buttons2"></a></td>
+    			<td><a href="${pageContext.request.contextPath}/citizen/edit/${c.id}"><input type="submit" value="Edytuj" class="buttons2"></a></td>
 
 			</tr>
 		</c:forEach>
@@ -58,19 +74,7 @@
 	
 	
 	</center>
-	<div class="guide">
-	To jest baza obywateli PESEL.<br>
-	Tu możesz
-	<ul>
-	<li>Dodać/edytować/usunąć osobę. Można śmiało klikać!</li>
-	<li>Każda akcja zostanie zapisana w historii.</li>
-	<li>Aby móc utworzyć Dowód Osobisty musi on być przyporządkowany osobie z tej bazy.</li>
-	<li>Aby móc później utworzyć dowód osobisty skopiuj sobie PESEL wybranej osoby.</li>
-	</ul>
-	Zapraszam do klikania.
 	
-	
-	</div>
 	
 	
 <%@include file="../jspf/footer.jspf"%>

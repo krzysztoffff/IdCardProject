@@ -57,6 +57,15 @@
 	letter-spacing: 3px;
 }
 
+.buttons2 {
+	font-family: "Arial", Arial, sans-serif;
+	color: #444444;
+	height: 40px;
+	font-size: 14px;
+	letter-spacing: 2px;
+	
+}
+
 .addphoto {
 	font-family: "Arial", Arial, sans-serif;
 	margin-top: 30px;

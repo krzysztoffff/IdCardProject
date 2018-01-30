@@ -14,22 +14,37 @@
 <%@include file="../jspf/head_config.jspf"%>
 <title>Show history</title>
 </head>
-<body class = "idbody">
+<body class="idbody">
 	<%@include file="../jspf/main_menu.jspf"%><br>
 	<%@include file="../jspf/header.jspf"%>
-	
-	<p class = "description">Historia bazy PESEL</p>
+
+	<div class="guide">
+		Historia operacji na bazie PESEL.<br>
+		<ul>
+			<li>Możesz tu zobaczyć jakie operacje były dokonane oraz w jakim czasie.</li>
+			<li>Możesz podejrzeć historię konkretnej osoby. Wystarczy wprowadzić jej nr PESEL i kliknąć "Generuj".</li>
+			<li>Usunięcie osoby z bazy PESEL nie powoduje usunięcia jej historii. Tu zawsze będzie można odnaleźć człowieka.</li>
+
+		</ul>
+		Zapraszam do klikania.
+
+
+	</div>
+
+	<p class="description">Historia bazy PESEL</p>
 
 
 
 
- 
-	<form:form  method="post" modelAttribute="findchistory">
-	<form:label class = "description" path="pesel">Historia po nr PESEL </form:label>
-	<form:input path="pesel" /><form:errors class = "iderrors" path = "pesel" /><br>
-	<input type=submit value="Generuj">
+
+	<form:form method="post" modelAttribute="findchistory">
+		<form:label class="description" path="pesel">Historia po nr PESEL </form:label>
+		<form:input path="pesel" />
+		<form:errors class="iderrors" path="pesel" />
+		<br>
+		<input type=submit class="buttons" value="Generuj">
 	</form:form>
-	
+
 
 
 
@@ -38,8 +53,8 @@
 
 	<c:choose>
 		<c:when test="${onecitizenhistory != null}">
-		<p class = "description">Historia po nr pesel</p>
-			<table class ="idtable">
+			<p class="description">Historia po nr pesel</p>
+			<table class="idtable">
 				<tr>
 					<th>id</th>
 					<th>Imie</th>
@@ -88,10 +103,10 @@
 
 
 	<br>
-	
-	<p class = "description">Cała historia zmian:</p>
 
-	<table class ="idtable">
+	<p class="description">Cała historia zmian:</p>
+
+	<table class="idtable">
 		<tr>
 			<th>id</th>
 			<th>Imie</th>
@@ -144,7 +159,7 @@
 
 
 
-<%@include file="../jspf/footer.jspf"%>
+	<%@include file="../jspf/footer.jspf"%>
 
 
 

@@ -27,6 +27,7 @@
 	<ul>
 	<li>Dodawanie/edycja/usuwanie osoby z bazy PESEL.</li>
 	<li>Osoba z bazy może mieć utworzony dowód osobisty ze zdjęciem.</li>
+	<li>W bazie jest trochę zmyślonych danych oraz kilka zdjęć zapożyczonych z sieci.</li>
 	</ul>
 	Zapraszam do klikania.
 	

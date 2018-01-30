@@ -15,6 +15,20 @@
 <body class = "idbody">
 	<%@include file="../jspf/main_menu.jspf"%><br>
 	<%@include file="../jspf/header.jspf"%>
+	
+	<div class="guide">
+	Dodawanie/Edycja osoby do bazy PESEL.<br>
+	<ul>
+	<li>Najważniejsze dane są walidowane.</li>
+	<li>Aby wprowadzić PESEL trzeba wpisać prawdziwy nr. Można skorzystać z generatora numerów PESEL dostępnych w sieci.</li>
+	<li>W przyszłości chciałbym wprowadzić rozkodowywanie nr PESEL oraz autouzupełnianie danych. Np miasta po kodzie pocztowym.</li>
+
+	
+	</ul>
+	Zapraszam do klikania.
+	
+	
+	</div>
 	<p class = "description">Dodaj osobę</p>
 
 <center>
@@ -70,10 +84,11 @@
 	<br><br>
 
 
-		<input type="submit" />
+		<input type="submit" class="buttons2" value="Zapisz"/>
 		</center>
 
 	</form:form>
+	
 	<%@include file="../jspf/footer.jspf"%>
 </body>
 </html>
