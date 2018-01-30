@@ -26,22 +26,21 @@
 						<form:input path="citizen" value="${documents.citizen.id}"
 							type="hidden" />
 						<br>
-		${documents.citizen.firstName } ${documents.citizen.lastName }<br>
-  		PESEL ${documents.citizen.pesel }<br>
-						<form:input path="idCardNumber" placeholder="idCardNumber" />
+		<span class = "guide">Imie i nazwisko: </span>${documents.citizen.firstName } ${documents.citizen.lastName }<br>
+  		<span class = "guide">PESEL </span> ${documents.citizen.pesel }<br>
+						<span class = "guide">Nadaj nr dowodu osobistego </span><form:input path="idCardNumber" placeholder="idCardNumber" />
 						<form:errors path="idCardNumber" />
 						<br>
-						<form:input path="photo"
-							value="${sessionScope.photopath}"
-							placeholder="photo" />
+						<span class = "guide">Unikalna nazwa pliku zdjęcia na serwerze </span><form:input path="photo" readonly="readonly" 
+							value="${sessionScope.photopath}" placeholder="photo" />
 						<form:errors path="photo" />
 						<br>
 
-						<form:input type="date" path="dateOfIssue"
+						<span class = "guide">Wprowadź datę wydania </span><form:input type="date" path="dateOfIssue"
 							placeholder="dateOfIssue" />
 						<form:errors path="dateOfIssue" />
 						<br>
-						<form:input type="date" path="expiryDate" placeholder="expiryDate" />
+						<span class = "guide">Ustal datę ważności </span><form:input type="date" path="expiryDate" placeholder="expiryDate" />
 						<form:errors path="expiryDate" />
 						<br>
 
