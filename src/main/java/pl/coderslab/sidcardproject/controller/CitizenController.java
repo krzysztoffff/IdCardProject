@@ -38,8 +38,8 @@ public class CitizenController {
 	@PostMapping("/add")
 	public String addPost(@Valid @ModelAttribute Citizen citizen, BindingResult br, Model c) {
 
-		if (this.cr.findCitizenByPesel(citizen.getPesel()) != null) {
-			c.addAttribute("peselExists", "Taki pesel jest ju¿ w bazie");
+		if (citizen.getPesel() != "" && this.cr.findCitizenByPesel(citizen.getPesel()) != null) {//empty field citizen.getPesel generates error too
+			c.addAttribute("peselUniqueError", "Taki pesel jest ju¿ w bazie");
 			return "citizen/add";
 		}
 

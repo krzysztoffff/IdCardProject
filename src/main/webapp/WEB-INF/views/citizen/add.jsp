@@ -36,43 +36,46 @@
 		<Table>
 			<tr>
 				<td><form:label path="pesel">PESEL </form:label></td>
-				<td><form:input path="pesel" /><form:errors path = "pesel"/></td>
+				<td><form:input path="pesel" /><form:errors class="iderrors" path = "pesel"/>
+				<span class="iderrors">${peselUniqueError}</span>
+				
+				</td>
 			</tr>
 			<tr>
 				<td><form:label path="firstName">Imię </form:label></td>
-				<td><form:input path="firstName" /><form:errors path = "firstName" /></td>
+				<td><form:input path="firstName" /><form:errors class="iderrors" path = "firstName" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="secondName">Drugie imie </form:label></td>
-				<td><form:input path="secondName" /><form:errors path = "secondName" /></td>
+				<td><form:input path="secondName" /><form:errors class="iderrors" path = "secondName" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="lastName">Nazwisko </form:label></td>
-				<td><form:input path="lastName" /><form:errors path = "lastName" /></td>
+				<td><form:input path="lastName" /><form:errors class="iderrors" path = "lastName" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="sex">Płeć </form:label></td>
-				<td><form:input path="sex" /><form:errors path = "sex"/></td>
+				<td><form:input path="sex" /><form:errors class="iderrors" path = "sex"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="dateOfBirth">Data urodzenia</form:label></td>
-				<td><form:input type="date" path="dateOfBirth" /><form:errors path = "dateOfBirth" /></td>
+				<td><form:input type="date" path="dateOfBirth" /><form:errors class="iderrors" path = "dateOfBirth" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="street">Ulica </form:label></td>
-				<td><form:input path="street" /><form:errors path = "street" /></td>
+				<td><form:input path="street" /><form:errors class="iderrors" path = "street" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="numberOfBuilding">Nr lokalu </form:label></td>
-				<td><form:input path="numberOfBuilding" /><form:errors path = "numberOfBuilding" /></td>
+				<td><form:input path="numberOfBuilding" /><form:errors class="iderrors" path = "numberOfBuilding" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="city">Miasto </form:label></td>
-				<td><form:input path="city" /><form:errors path = "city" /></td>
+				<td><form:input path="city" /><form:errors class="iderrors" path = "city" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="postalCode">Kod pocztowy </form:label></td>
-				<td><form:input path="postalCode" /><form:errors path="postalCode" /></td>
+				<td><form:input path="postalCode" /><form:errors class="iderrors" path="postalCode" /></td>
 			</tr>
 		</Table>
 		
