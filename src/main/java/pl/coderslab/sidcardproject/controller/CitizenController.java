@@ -36,7 +36,13 @@ public class CitizenController {
 	}
 
 	@PostMapping("/add")
-	public String addPost(@Valid @ModelAttribute Citizen citizen, BindingResult br) {
+	public String addPost(@Valid @ModelAttribute Citizen citizen, BindingResult br, Model c) {
+
+		if (this.cr.findCitizenByPesel(citizen.getPesel()) != null) {
+			c.addAttribute("peselExists", "Taki pesel jest ju¿ w bazie");
+			return "citizen/add";
+		}
+
 		if (br.hasErrors()) {
 			return "citizen/add";
 		} else {
@@ -74,14 +80,12 @@ public class CitizenController {
 
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable long id) {
-		
+
 		this.chr.save(CitizenToHistory(cr.findOne(id), "Usuniêty"));
 		cr.delete(id);
 		return "redirect:/citizen/all";
 	}
 
-	
-	
 	public CitizenHistory CitizenToHistory(Citizen citizen, String action) {
 		CitizenHistory ch = new CitizenHistory(citizen.getPesel(), citizen.getFirstName(), citizen.getSecondName(),
 				citizen.getLastName(), citizen.getSex(), citizen.getDateOfBirth(), citizen.getStreet(),
