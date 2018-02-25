@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,6 +22,8 @@ public class Documents {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@NotEmpty
+	@Size(min=5, max=10)
+	@Pattern(regexp = "^((?!(.*<.*>.*)).)*$", message = "Nie wpisuj skryptów!")
 	private String idCardNumber;
 	private String photo;
 	@NotNull
