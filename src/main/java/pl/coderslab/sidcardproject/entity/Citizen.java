@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.pl.PESEL;
@@ -33,23 +34,45 @@ public class Citizen {
 	@PESEL
 	@Column(unique=true)
     private String pesel;
+	
+	@Size(min=2, max=25)
+//	@Pattern(regexp = "^[a-zA-Z]+$", message = "Tylko duże lub małe litery!")	//taka składnia nie sprawdzi się do polskich liter
+	@Pattern(regexp = "^((?!(.*<.*>.*)).)*$", message = "Nie wpisuj skryptów!") 
 	@NotEmpty
     private String firstName;
+	
+	@Size(min=2, max=25)
+	@Pattern(regexp = "^((?!(.*<.*>.*)).)*$", message = "Nie wpisuj skryptów!")
     private String secondName;
+	
 	@NotEmpty
+	@Size(min=2, max=25)
+	@Pattern(regexp = "^((?!(.*<.*>.*)).)*$", message = "Nie wpisuj skryptów!")
     private String lastName;
-    @NotEmpty
+    
+	@NotEmpty
     @Column(length = 1)
     @Pattern(regexp = "[M]|[K]")
 	private String sex;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
-    @NotEmpty
+    
+	@NotEmpty
+	@Size(min=2, max=30)
+	@Pattern(regexp = "^((?!(.*<.*>.*)).)*$", message = "Nie wpisuj skryptów!")
     private String street;
-    @NotEmpty
+    
+	@NotEmpty
+    @Size(min=1, max=10)
+	@Pattern(regexp = "^((?!(.*<.*>.*)).)*$", message = "Nie wpisuj skryptów!")
     private String numberOfBuilding;
-    @NotEmpty
+    
+	@NotEmpty
+	@Size(min=2, max=30)
+	@Pattern(regexp = "^((?!(.*<.*>.*)).)*$", message = "Nie wpisuj skryptów!")
     private String city;
+	
     @Column(name = "postalCode", length = 6)
     @Pattern(regexp = "[0-9][0-9]-[0-9][0-9][0-9]")
     private String postalCode;

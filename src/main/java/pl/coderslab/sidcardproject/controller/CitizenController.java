@@ -39,7 +39,7 @@ public class CitizenController {
 	public String addPost(@Valid @ModelAttribute Citizen citizen, BindingResult br, Model c) {
 
 		if (citizen.getPesel() != "" && this.cr.findCitizenByPesel(citizen.getPesel()) != null) {//empty field citizen.getPesel generates error too
-			c.addAttribute("peselUniqueError", "Taki pesel jest ju¿ w bazie");
+			c.addAttribute("peselUniqueError", "Taki pesel jest juï¿½ w bazie");
 			return "citizen/add";
 		}
 
@@ -71,7 +71,7 @@ public class CitizenController {
 		} else {
 			this.cr.save(citizen);
 
-			this.chr.save(CitizenToHistory(citizen, "edytowany"));
+			this.chr.save(CitizenToHistory(citizen, "Edytowany"));
 
 			return "redirect:/citizen/all";
 
@@ -81,7 +81,7 @@ public class CitizenController {
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable long id) {
 
-		this.chr.save(CitizenToHistory(cr.findOne(id), "Usuniêty"));
+		this.chr.save(CitizenToHistory(cr.findOne(id), "UsuniÄ™ty"));
 		cr.delete(id);
 		return "redirect:/citizen/all";
 	}

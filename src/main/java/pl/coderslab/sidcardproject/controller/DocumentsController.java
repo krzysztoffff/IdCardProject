@@ -39,6 +39,7 @@ public class DocumentsController {
 	@Autowired
 	CitizenRepository cr;
 	private static String UPLOADED_FOLDER = "F://workspace//IdCardProject//src//main//webapp//resources//images//";
+	//uplad folder on server
 //	private static String UPLOADED_FOLDER = "//usr//home//krzysztoffff//tomcat//webapps//IdCardProject//resources//images//";
 	
 
@@ -110,17 +111,17 @@ public class DocumentsController {
 	}
 
 	@PostMapping("/add/*")//w metodzie get mam parametr
-	public String addPost(Model m, @Valid @ModelAttribute Documents documents, BindingResult br) {//przekazujê model dalej
+	public String addPost(Model m, @Valid @ModelAttribute Documents documents, BindingResult br) {//przekazujï¿½ model dalej
 		if (br.hasErrors())
 			return "documents/add";
-		long id = documents.getCitizen().getId();  //pobieram id z dokumentów
+		long id = documents.getCitizen().getId();  //pobieram id z dokumentï¿½w
 		dr.save(documents); //zapisuje dokument
-		m.addAttribute("citizenfulldata", cr.findOne(id)); //³adujê atrybuty na nowo
+		m.addAttribute("citizenfulldata", cr.findOne(id)); //ï¿½adujï¿½ atrybuty na nowo
 		
 		m.addAttribute("documents", dr.findAllByCitizenId(id));
 		
 		
-		return "documents/documents";//wracam do widoku citizena oraz wszystkich jego dowodów
+		return "documents/documents";//wracam do widoku citizena oraz wszystkich jego dowodï¿½w
 
 	}
 	
